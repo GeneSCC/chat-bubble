@@ -1,4 +1,6 @@
-
+$(document).ready(function(){
+    toggleChatBox();
+})
 
 // Function to toggle chat box visibility
 function toggleChatBox() {
@@ -85,7 +87,7 @@ var inputField = document.getElementById('chatInput');
 // Add event listener to input field
 inputField.addEventListener('keydown', function(event) {
 
-    if (event.key === 'Enter' || event.keyCode === 13) {
+    if ((event.key === 'Enter' || event.keyCode === 13) && !event.shiftKey) {
 
         event.preventDefault();
         sendMessage();
