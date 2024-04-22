@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap Chat App</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+        
+        <!-- Custom CSS -->
+        <style>
+
+            /* Style for floating chat icon */
+            #chat-icon {
+                position: fixed;
+                bottom: 4%;
+                right: 3%;
+                z-index: 1000;
+                cursor: pointer;
+                font-size: 30px;
+            }
+        
+            /* Style for chat box */
+            #chat-box {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                z-index: 1000;
+                width: 400px; /* Larger width */
+                background-color: #fff;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Larger shadow */
+                display: none;
+            }
+
+            #chat-box .chat-header {
+                padding: 15px; /* Larger padding */
+                border-bottom: 2px solid #ddd; /* Larger border */
+            }
+
+            #chat-box .chat-body {
+                padding: 15px; /* Larger padding */
+                height: 300px; /* Larger height */
+                overflow-y: auto;
+            }
+
+            #chat-box .chat-footer {
+                padding: 15px; /* Larger padding */
+                border-top: 2px solid #ddd; /* Larger border */
+            }
+
+            /* Style for close button */
+            .close-btn {
+                position: absolute;
+                top: 10px; /* Larger top position */
+                right: 15px; /* Larger right position */
+                cursor: pointer;
+                font-size: 20px; /* Larger font size */
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- temporary website -->
+        <div class="container">
+          <h1>Welcome to Our Website</h1>
+          <p>This is a Bootstrap website template with a floating chat icon.</p>
+        </div>    
+        
+        <!-- Floating chat icon -->
+        <div id="chat-icon" class="bg-success rounded-circle p-2" onclick="toggleChatBox()">
+            &#9993;
+        </div>
+
+        <!-- Chat box -->
+        <div id="chat-box" class="rounded">
+
+            <!-- top -->
+            <div class="chat-header bg-success text-white rounded-top">
+              <span>Chat with Us!</span>
+              <span class="close-btn" onclick="toggleChatBox()">&times;</span>
+            </div>
+        
+            <!-- content -->
+            <div class="chat-body">
+                <div id="chatMessages" style="height: 300px; overflow-y: auto;">
+                    <!-- Messages will be added here dynamically -->
+                  </div>
+            </div>
+            
+            <!-- bottom -->
+            <div class="chat-footer d-flex">
+              <textarea type="text" id="chatInput" class="form-control me-1" placeholder="Type your message"></textarea>
+              <button type="button" class="btn btn-success px-4" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            
+        </div>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+        <!-- Custom JavaScript -->
+        <script>
+
+          // Function to toggle chat box visibility
+            function toggleChatBox() {
+                $('#chat-box').slideToggle();
+            }
+
+            // message functions
+
+            function sendMessage() {
+                var input = document.getElementById('chatInput');
+                var messages = document.getElementById('chatMessages');
+
+                //user name
+                var user = document.createElement('div');
+                user.textContent ='You';
+                user.style.fontWeight = 'bold';
+                user.style.padding = '10px';
+                user.style.marginTop = '5px';
+                messages.appendChild(user);
+
+                //user message
+                var message = document.createElement('div');
+                message.textContent = input.value;
+                message.style.padding = '10px';
+                message.style.backgroundColor = '#f0f0f0';
+                message.style.wordWrap = 'break-word';
+                messages.appendChild(message);
+
+
+                input.value = '';
+            }
+
+
+            //bot response function
+            function respondMessage(){
+                var botInput = '';
+                var botMessage = '';
+
+                //bot name
+                var botr = document.createElement('div');
+                bot.textContent ='Chat Columbano';
+                bot.style.fontWeight = 'bold';
+                bot.style.padding = '10px';
+                bot.style.marginTop = '5px';
+                messages.appendChild(bot);
+
+                //bot message
+                var message = document.createElement('div');
+                message.textContent = botInput.value;
+                message.style.padding = '10px';
+                message.style.backgroundColor = '#f0f0f0';
+                messages.appendChild(message);
+            }
+      </script>
+    </body>
+</html>
