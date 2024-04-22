@@ -27,8 +27,8 @@
             /* Style for chat box */
             #chat-box {
                 position: fixed;
-                bottom: 30px;
-                right: 30px;
+                bottom: 4%;
+                right: 3%;
                 z-index: 1000;
                 width: 400px; /* Larger width */
                 background-color: #fff;
@@ -85,10 +85,10 @@
             </div>
         
             <!-- content -->
-            <div class="chat-body">
-                <div id="chatMessages" style="height: 300px; overflow-y: auto;">
+            <div class="chat-body" id="chatMessages">
+                <!-- <div id="chatMessages" style="height: 300px; overflow-y: auto;"> -->
                     <!-- Messages will be added here dynamically -->
-                  </div>
+                  <!-- </div> -->
             </div>
             
             <!-- bottom -->
@@ -118,48 +118,58 @@
 
             function sendMessage() {
                 var input = document.getElementById('chatInput');
-                var messages = document.getElementById('chatMessages');
+                
+                if(input.value !== ''){
+                    var messages = document.getElementById('chatMessages');
 
-                //user name
-                var user = document.createElement('div');
-                user.textContent ='You';
-                user.style.fontWeight = 'bold';
-                user.style.padding = '10px';
-                user.style.marginTop = '5px';
-                messages.appendChild(user);
+                    //user name
+                    var user = document.createElement('div');
+                    user.textContent ='You';
+                    user.style.fontWeight = 'bold';
+                    user.style.padding = '10px';
+                    user.style.marginTop = '5px';
+                    user.style.display = 'flex';
+                    user.style.justifyContent = 'flex-end';
+                    messages.appendChild(user);
 
-                //user message
-                var message = document.createElement('div');
-                message.textContent = input.value;
-                message.style.padding = '10px';
-                message.style.backgroundColor = '#f0f0f0';
-                message.style.wordWrap = 'break-word';
-                messages.appendChild(message);
+                    //user message
+                    var message = document.createElement('div');
+                    message.textContent = input.value;
+                    message.style.padding = '10px'; 
+                    message.style.display = 'flex';
+                    message.style.justifyContent = 'flex-end';
+                    message.style.backgroundColor = '#f0f0f0';
+                    message.style.wordWrap = 'break-word';
+                    messages.appendChild(message);
 
-
-                input.value = '';
+                    respondMessage();
+                    input.value = '';
+                }
+                
             }
 
 
             //bot response function
             function respondMessage(){
-                var botInput = '';
-                var botMessage = '';
+                var botInput = 'Panagdait! I am Chat Columbano';
+                var botMessage = document.getElementById('chatMessages');
 
                 //bot name
-                var botr = document.createElement('div');
+                var bot = document.createElement('div');
                 bot.textContent ='Chat Columbano';
                 bot.style.fontWeight = 'bold';
                 bot.style.padding = '10px';
                 bot.style.marginTop = '5px';
-                messages.appendChild(bot);
+                botMessage.appendChild(bot);
 
                 //bot message
                 var message = document.createElement('div');
-                message.textContent = botInput.value;
+                message.textContent = botInput;
                 message.style.padding = '10px';
                 message.style.backgroundColor = '#f0f0f0';
-                messages.appendChild(message);
+                message.style.wordWrap = 'break-word';
+                botMessage.appendChild(message);
+
             }
       </script>
     </body>
