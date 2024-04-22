@@ -86,9 +86,12 @@
         
             <!-- content -->
             <div class="chat-body" id="chatMessages">
-                <!-- <div id="chatMessages" style="height: 300px; overflow-y: auto;"> -->
-                    <!-- Messages will be added here dynamically -->
-                  <!-- </div> -->
+
+                <!-- empty -->
+                <div style="height: 300px; overflow-y: auto;">
+
+                  </div>
+
             </div>
             
             <!-- bottom -->
@@ -170,6 +173,7 @@
                 message.style.wordWrap = 'break-word';
                 botMessage.appendChild(message);
 
+                message.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
       </script>
     </body>
