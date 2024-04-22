@@ -9,58 +9,9 @@
 
         <!-- Font Awesome CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-        
+     
         <!-- Custom CSS -->
-        <style>
-
-            /* Style for floating chat icon */
-            #chat-icon {
-                position: fixed;
-                bottom: 4%;
-                right: 3%;
-                z-index: 1000;
-                cursor: pointer;
-                font-size: 30px;
-            }
-        
-            /* Style for chat box */
-            #chat-box {
-                position: fixed;
-                bottom: 4%;
-                right: 3%;
-                z-index: 1000;
-                width: 400px; /* Larger width */
-                background-color: #fff;
-                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Larger shadow */
-                display: none;
-            }
-
-            #chat-box .chat-header {
-                padding: 15px; /* Larger padding */
-                border-bottom: 2px solid #ddd; /* Larger border */
-            }
-
-            #chat-box .chat-body {
-                padding: 15px; /* Larger padding */
-                height: 300px; /* Larger height */
-                overflow-y: auto;
-            }
-
-            #chat-box .chat-footer {
-                padding: 15px; /* Larger padding */
-                border-top: 2px solid #ddd; /* Larger border */
-            }
-
-            /* Style for close button */
-            .close-btn {
-                position: absolute;
-                top: 10px; /* Larger top position */
-                right: 15px; /* Larger right position */
-                cursor: pointer;
-                font-size: 20px; /* Larger font size */
-            }
-        </style>
+        <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
 
@@ -88,9 +39,12 @@
             <div class="chat-body" id="chatMessages">
 
                 <!-- empty -->
-                <div style="height: 300px; overflow-y: auto;">
+                <div id="chat-bot-welcome" class="mb-3 border-3 border-bottom rounded-bottom">
 
-                  </div>
+                    <h1>Panagdait!!</h1>
+                    <h3>Do you have anything you want to ask about?</h3>
+
+                </div>
 
             </div>
             
@@ -108,73 +62,8 @@
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+        <!-- custom functions -->
+        <script src="assets/script.js"></script>   
 
-        <!-- Custom JavaScript -->
-        <script>
-
-          // Function to toggle chat box visibility
-            function toggleChatBox() {
-                $('#chat-box').slideToggle();
-            }
-
-            // message functions
-
-            function sendMessage() {
-                var input = document.getElementById('chatInput');
-                
-                if(input.value !== ''){
-                    var messages = document.getElementById('chatMessages');
-
-                    //user name
-                    var user = document.createElement('div');
-                    user.textContent ='You';
-                    user.style.fontWeight = 'bold';
-                    user.style.padding = '10px';
-                    user.style.marginTop = '5px';
-                    user.style.display = 'flex';
-                    user.style.justifyContent = 'flex-end';
-                    messages.appendChild(user);
-
-                    //user message
-                    var message = document.createElement('div');
-                    message.textContent = input.value;
-                    message.style.padding = '10px'; 
-                    message.style.display = 'flex';
-                    message.style.justifyContent = 'flex-end';
-                    message.style.backgroundColor = '#f0f0f0';
-                    message.style.wordWrap = 'break-word';
-                    messages.appendChild(message);
-
-                    respondMessage();
-                    input.value = '';
-                }
-                
-            }
-
-
-            //bot response function
-            function respondMessage(){
-                var botInput = 'Panagdait! I am Chat Columbano';
-                var botMessage = document.getElementById('chatMessages');
-
-                //bot name
-                var bot = document.createElement('div');
-                bot.textContent ='Chat Columbano';
-                bot.style.fontWeight = 'bold';
-                bot.style.padding = '10px';
-                bot.style.marginTop = '5px';
-                botMessage.appendChild(bot);
-
-                //bot message
-                var message = document.createElement('div');
-                message.textContent = botInput;
-                message.style.padding = '10px';
-                message.style.backgroundColor = '#f0f0f0';
-                message.style.wordWrap = 'break-word';
-                botMessage.appendChild(message);
-
-                message.scrollIntoView({ behavior: 'smooth', block: 'end' });
-            }
-      </script>
     </body>
 </html>
