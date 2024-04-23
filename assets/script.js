@@ -1,3 +1,4 @@
+// open chat-box
 $(document).ready(function(){
     toggleChatBox();
 })
@@ -10,8 +11,8 @@ function toggleChatBox() {
     input.focus();
 }
 
-// message functions
 
+// message functions
 function sendMessage() {
     var input = document.getElementById('chatInput');
     
@@ -83,10 +84,8 @@ function scrollToElement(element, offset) {
 
 
 var inputField = document.getElementById('chatInput');
-
 // Add event listener to input field
 inputField.addEventListener('keydown', function(event) {
-
     if ((event.key === 'Enter' || event.keyCode === 13) && !event.shiftKey) {
 
         event.preventDefault();
