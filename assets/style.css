@@ -1,0 +1,54 @@
+/* Style for floating chat icon */
+#chat-icon {
+    position: fixed;
+    bottom: 4%;
+    right: 3%;
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* Style for chat box */
+#chat-box {
+    position: fixed;
+    bottom: 4%;
+    right: 3%;
+    z-index: 1000;
+    width: 500px; /* Larger width */
+    max-width: 90%; /* Responsive max-width */
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Larger shadow */
+    display: none;
+}
+
+#chat-box .chat-header {
+    padding: 20px; /* Larger padding */
+    border-bottom: 2px solid #ddd; /* Larger border */
+}
+
+#chat-box .chat-body {
+    padding: 20px; /* Larger padding */
+    height: 400px; /* Larger height */
+    max-height: calc(100vh - 250px); /* Responsive max-height */
+    overflow-y: scroll;
+}
+
+#chat-box .chat-footer {
+    padding: 20px; /* Larger padding */
+    border-top: 2px solid #ddd; /* Larger border */
+}
+
+/* Style for close button */
+.close-btn {
+    position: absolute;
+    top: 15px; /* Larger top position */
+    right: 20px; /* Larger right position */
+    cursor: pointer;
+    font-size: 24px; /* Larger font size */
+}
+
+@media screen and (max-height: 600px) {
+    #chat-bot-welcome {
+        display: none;
+    }
+}

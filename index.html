@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap Chat App</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+     
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+
+        <!-- temporary website -->
+        <div class="container">
+          <h1>Welcome to Our Website</h1>
+          <p>This is a Bootstrap website template with a floating chat icon.</p>
+        </div>    
+        
+        <!-- Floating chat icon -->
+        <div id="chat-icon" class="bg-success rounded-circle p-2" onclick="toggleChatBox()">
+            &#9993;
+        </div>
+
+        <!-- Chat box -->
+        <div id="chat-box" class="rounded">
+
+            <!-- top -->
+            <div class="chat-header bg-success text-white rounded-top">
+              <span>Chat with Us!</span>
+              <span class="close-btn" onclick="toggleChatBox()">&times;</span>
+            </div>
+        
+            <!-- content -->
+            <div class="chat-body" id="chatMessages">
+
+                <!-- empty -->
+                <div class="p-2 text-center border-3 border-bottom rounded-bottom" id="chat-bot-welcome">
+                  <h1>Chat Columbano</h1>
+                  <p>Welcome to the SCC website, you can ask your questions here!</p>
+                </div>
+
+            </div>
+            
+            <!-- bottom -->
+            <div class="chat-footer d-flex">
+              <textarea type="text" id="chatInput" class="form-control me-1" placeholder="Type your message"></textarea>
+              <button type="button" class="btn btn-success px-4" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            
+        </div>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- custom functions -->
+        <script src="assets/script.js"></script>   
+
+    </body>
+</html>
