@@ -1,7 +1,7 @@
 // open chat-box
-$(document).ready(function(){
-    toggleChatBox();
-})
+// $(document).ready(function(){
+//     toggleChatBox();
+// })
 
 // Function to toggle chat box visibility
 function toggleChatBox() {
